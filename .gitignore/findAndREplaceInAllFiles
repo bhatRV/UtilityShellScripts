@@ -1,0 +1,14 @@
+
+#!/usr/bin/env bash
+
+echo -n "Enter Old String: "
+read looking_for_string
+
+echo -n "Enter New String: "
+read something_other
+
+
+for pp in $(grep -Rl looking_for_string)
+do
+    sed -i 's/$looking_for_string/$something_other/g' "${pp}"
+done
